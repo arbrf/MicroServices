@@ -21,8 +21,12 @@ public class CurrencyExchangeServiceController {
     public CurrencyExchange retrieveExchangeValues
             (@PathVariable String from,@PathVariable String to){
         String env=environment.getProperty("local.server.port");
+        System.out.println(env);
        // CurrencyExchange currencyExchange = new CurrencyExchange(1000L, from, to, BigDecimal.valueOf(50), env);
+
         CurrencyExchange currencyExchange=currencyExchangeRepository.findByFromAndTo(from, to);
+
+        currencyExchange.setEnvironnment(env);
         return currencyExchange;
 
     }
