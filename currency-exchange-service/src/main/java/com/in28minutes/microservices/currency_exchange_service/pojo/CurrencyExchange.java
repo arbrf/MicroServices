@@ -3,24 +3,30 @@ package com.in28minutes.microservices.currency_exchange_service.pojo;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.math.BigDecimal;
+
 @Entity
+@Table(name = "currency_exchange")
 public class CurrencyExchange {
     @Id
     private Long id;
-    @Column(name="currency_from")
-    private  String from;
+    @Column(name = "currency_from")
+    private String from;
     @Column(name = "currency_to")
     private String to;
+    @Column(name = "conversion_multiple")
     private BigDecimal conversionMultiple;
+    @Column(name = "environnment")
     private String Environnment;
-    public CurrencyExchange(Long id, String from, String to, BigDecimal conversionMultiple,String  environnment) {
+
+    public CurrencyExchange(Long id, String from, String to, BigDecimal conversionMultiple, String environnment) {
         this.id = id;
         this.from = from;
         this.to = to;
         this.conversionMultiple = conversionMultiple;
-        this.Environnment=environnment;
+        this.Environnment = environnment;
     }
 
     public CurrencyExchange() {
