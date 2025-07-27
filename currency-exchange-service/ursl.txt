@@ -1,2 +1,26 @@
+maxAttempts instead of maxRetryAttempts
+
+resilience4j.retry.instances.sample-api.maxAttempts=5 #NEW
+#resilience4j.retry.instances.sample-api.maxRetryAttempts=5 #OLD
+
+
 Currency Exchange Service
 http://localhost:8000/currency-exchange/from/USD/to/INR
+Urls for API gateway
+
+http://localhost:8761/
+
+http://localhost:8765/currency-exchange/from/USD/to/INR
+http://localhost:8001/currency-exchange/from/USD/to/INR
+
+
+http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/10
+http://127.0.0.1:8765/currency-conversion/from/USD/to/INR/quantity/10
+
+
+
+http://127.0.0.1:8765/currency-conversion-feign/from/USD/to/INR/quantity/10
+http://127.0.0.1:8765/currency-conversion-feign/from/USD/to/INR/quantity/10
+http://127.0.0.1:8765/currency-conversion-new/from/USD/to/INR/quantity/10
+
+
